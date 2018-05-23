@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="5118" started-at="2018-05-23T03:44:48Z" finished-at="2018-05-23T03:44:53Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="5118" started-at="2018-05-23T03:44:48Z" finished-at="2018-05-23T03:44:53Z">
+      <class name="com.testersconnect.api.HSTestSuite">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:com.testersconnect.api.HSTestSuite@3abbfa04]" name="initialize" is-config="true" duration-ms="159" started-at="2018-05-23T03:44:48Z" finished-at="2018-05-23T03:44:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="verifyCreateCompany()[pri:1, instance:com.testersconnect.api.HSTestSuite@3abbfa04]" name="verifyCreateCompany" duration-ms="2344" started-at="2018-05-23T03:44:48Z" finished-at="2018-05-23T03:44:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCreateCompany -->
+        <test-method status="PASS" signature="verifyCreateContact()[pri:2, instance:com.testersconnect.api.HSTestSuite@3abbfa04]" name="verifyCreateContact" duration-ms="653" started-at="2018-05-23T03:44:50Z" finished-at="2018-05-23T03:44:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCreateContact -->
+        <test-method status="PASS" signature="verifyContactAssoicatedToCompany()[pri:3, instance:com.testersconnect.api.HSTestSuite@3abbfa04]" name="verifyContactAssoicatedToCompany" duration-ms="478" started-at="2018-05-23T03:44:51Z" finished-at="2018-05-23T03:44:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyContactAssoicatedToCompany -->
+        <test-method status="PASS" signature="verifyCompanyDelete()[pri:4, instance:com.testersconnect.api.HSTestSuite@3abbfa04]" name="verifyCompanyDelete" duration-ms="470" started-at="2018-05-23T03:44:51Z" finished-at="2018-05-23T03:44:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCompanyDelete -->
+        <test-method status="PASS" signature="verifyContactDelete()[pri:5, instance:com.testersconnect.api.HSTestSuite@3abbfa04]" name="verifyContactDelete" duration-ms="697" started-at="2018-05-23T03:44:52Z" finished-at="2018-05-23T03:44:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyContactDelete -->
+        <test-method status="PASS" signature="cleanup()[pri:0, instance:com.testersconnect.api.HSTestSuite@3abbfa04]" name="cleanup" is-config="true" duration-ms="290" started-at="2018-05-23T03:44:52Z" finished-at="2018-05-23T03:44:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanup -->
+      </class> <!-- com.testersconnect.api.HSTestSuite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
