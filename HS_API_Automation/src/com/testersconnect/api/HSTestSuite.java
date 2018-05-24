@@ -69,7 +69,7 @@ public class HSTestSuite extends TestCaseBase {
 		String URL="https://api.hubapi.com/contacts/v1/contact/?hapikey="+HAPIKEY;
 		String requestBody="{ \"properties\": [ { \"property\": \"email\", \"value\": \"mp@ibm.com\" }, { \"property\": \"firstname\",   \"value\": \"Manoj\" },  { \"property\": \"lastname\", \"value\": \"Kumar\"  }]}";
 		
-		//Action
+		//ACT
 		contactID =	given().contentType("application/json").body(requestBody).
 			when().post(URL).
 			
@@ -89,9 +89,12 @@ public class HSTestSuite extends TestCaseBase {
 	
 	@Test(priority=3)//Verifies that the Contact is automatically associated to the company
 	public void verifyContactAssoicatedToCompany() {
+		//ARRANGE
 		logger = extent.createTest("Verify Contact Association with Company");
 		String URL="https://api.hubapi.com/companies/v2/companies/"+companyID+"/contacts?hapikey="+HAPIKEY;
 		System.out.println(URL);
+		
+		//ACT
 		String cID=given().contentType("application/json").when().get(URL).then().statusCode(200).extract().path("vidOffset").toString();
 		System.out.println(cID+" cID");
 		System.out.println(contactID+" contactID");
@@ -99,6 +102,7 @@ public class HSTestSuite extends TestCaseBase {
 		
 		logger.log(Status.INFO, MarkupHelper.createLabel("Contact ID= "+cID, ExtentColor.BLUE));
 		
+		//ASSERT
 		if(cID==contactID) {
 			logger.log(Status.PASS, MarkupHelper.createLabel("Contact Association to Company - PASSED", ExtentColor.GREEN));
 		}else {
@@ -108,21 +112,7 @@ public class HSTestSuite extends TestCaseBase {
 	}
 	
 	
-	@Test(priority=5)
-	public void verifyContactDelete() {
-		logger = extent.createTest("Verify Delete Contact");
-		String URL="https://api.hubapi.com/contacts/v1/contact/vid/"+contactID+"?hapikey="+HAPIKEY;
-		Response res=expect().statusCode(200).given().contentType("application/json").when().delete(URL);
-		
-		if(res.getStatusCode()==200) {
-			logger.log(Status.PASS, MarkupHelper.createLabel("Contact Deletion - PASSED", ExtentColor.GREEN));
-		}else {
-			logger.log(Status.FAIL, MarkupHelper.createLabel("Contact Deletion - FAILED", ExtentColor.RED));
-		}
-		//given().contentType("application/json").when().delete(URL).then().statusCode(200);
-		
-		
-	}
+	
 	
 	@Test(priority=4)
 	public void verifyCompanyDelete() {
@@ -136,7 +126,9 @@ public class HSTestSuite extends TestCaseBase {
 		//Act
 		//expect().statusCode(200).given().contentType("application/json").when().delete(URL);
 		Response res=given().contentType("application/json").when().delete(URL);
+	
 		
+		//Assert
 		if(res.getStatusCode()==200) {
 			logger.log(Status.PASS, MarkupHelper.createLabel("Company Deletion - PASSED", ExtentColor.GREEN));
 		}else {
@@ -144,7 +136,28 @@ public class HSTestSuite extends TestCaseBase {
 		}		
 		
 		
-		//Assert
+	
+		
+	}
+	
+	@Test(priority=5)
+	public void verifyContactDelete() {
+		//ARRANGE
+		
+		logger = extent.createTest("Verify Delete Contact");
+		String URL="https://api.hubapi.com/contacts/v1/contact/vid/"+contactID+"?hapikey="+HAPIKEY;
+		
+		//ACT
+		Response res=expect().statusCode(200).given().contentType("application/json").when().delete(URL);
+		
+		//ASSERT
+		if(res.getStatusCode()==200) {
+			logger.log(Status.PASS, MarkupHelper.createLabel("Contact Deletion - PASSED", ExtentColor.GREEN));
+		}else {
+			logger.log(Status.FAIL, MarkupHelper.createLabel("Contact Deletion - FAILED", ExtentColor.RED));
+		}
+		//given().contentType("application/json").when().delete(URL).then().statusCode(200);
+		
 		
 	}
 	
