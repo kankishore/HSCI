@@ -142,8 +142,8 @@ public class HSTestSuite extends TestCaseBase {
 	
 	@Test(priority=5)
 	public void verifyContactDelete() {
+
 		//ARRANGE
-		
 		logger = extent.createTest("Verify Delete Contact");
 		String URL="https://api.hubapi.com/contacts/v1/contact/vid/"+contactID+"?hapikey="+HAPIKEY;
 		
